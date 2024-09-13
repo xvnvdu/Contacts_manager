@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Bob",
+        "phone": "+434824824588",
+        "email": "bobcool@yandex.ru"
+    },
+    {
+        "name": "Lola",
+        "phone": "+4204826785",
+        "email": "Lola@icloud.com"
+    },
+    {
+        "name": "Ivan",
+        "phone": "+7923468795",
+        "email": "lalala@gmail.com"
+    },
+    {
+        "name": "\u0413\u0435\u0440\u043c\u0430\u043d",
+        "phone": "+79999999999",
+        "email": "German-Frolov@mail.ru"
+    },
+    {
+        "name": "\u041c\u0430\u0440\u0438\u044f",
+        "phone": "+379536559865",
+        "email": "Maria95@rambler.ru"
+    },
+    {
+        "name": "Xion Chi",
+        "phone": "+8615467893548",
+        "email": "Xion_Chi-2001@yahoo.com"
+    },
+    {
+        "name": "Mihail",
+        "phone": "+79264862578",
+        "email": "Misha_Mihail@example.com"
+    }
+]
