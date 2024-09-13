@@ -40,7 +40,7 @@ class ContactManager:
                 found_contacts.append(contact)
         return found_contacts if found_contacts else None
 
-    def delete_contact(self):
+    def delete_contact(self, contact):
         if contact:
             while True:
                 try:
@@ -50,6 +50,7 @@ class ContactManager:
                     continue
                 if choice == 0:
                     self.contacts.remove(contact)
+                    print('Контакт успешно удален !')
                     break
                 elif choice == 1:
                     break
@@ -151,7 +152,7 @@ while True:
                         contact = contact_list[num_change - 1]
                         print('Удалить контакт?:')
                         print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
-                        contact_manager.delete_contact()
+                        contact_manager.delete_contact(contact)
                         break
                     else:
                         print('Вам нужно выбрать номер из списка!')
@@ -160,13 +161,11 @@ while True:
                 for contact in contact_list:
                     print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
                     print('Удалить контакт?')
-                    contact_manager.delete_contact()
+                    contact_manager.delete_contact(contact)
         else:
             print('\nКонтакт не найден')
             space()
             continue
-
-        print('Контакт успешно удален !')
         space()
 
     elif command == 'edit':
