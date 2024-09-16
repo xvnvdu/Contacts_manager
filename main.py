@@ -63,7 +63,9 @@ class ContactManager:
         if contacts_list is None:
             contacts_list = self.contacts
         for contact in contacts_list:
-            print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']}")
+            print(f"Name: {contact['name']}, "
+                  f"Phone: {contact['phone']}, "
+                  f"Email: {contact['email']} \n")
 
     def save_contacts(self):
         with open('contacts.txt', 'w') as file:
@@ -124,7 +126,9 @@ while True:
         contacts_found = contact_manager.find_contact(name)
         if contacts_found:
             for contact in contacts_found:
-                print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} ")
+                print(f"Name: {contact['name']}, "
+                      f"Phone: {contact['phone']}, "
+                      f"Email: {contact['email']} \n")
             space()
         else:
             print('Контакт не найден')
@@ -138,7 +142,9 @@ while True:
                 print('Найдены следующие контакты:\n')
                 num_in_list = 1
                 for contact in contact_list:
-                    print(f"{num_in_list}) Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} ")
+                    print(f"{num_in_list}) Name: {contact['name']}, "
+                          f"Phone: {contact['phone']}, "
+                          f"Email: {contact['email']} \n")
                     num_in_list += 1
                 while True:
                     try:
@@ -151,7 +157,9 @@ while True:
                     if 0 < num_change <= len(contact_list):
                         contact = contact_list[num_change - 1]
                         print('Удалить контакт?:')
-                        print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
+                        print(f"Name: {contact['name']}, "
+                              f"Phone: {contact['phone']}, "
+                              f"Email: {contact['email']} \n")
                         contact_manager.delete_contact(contact)
                         break
                     else:
@@ -159,7 +167,9 @@ while True:
             else:
                 print('\nНайден единственный контакт:')
                 for contact in contact_list:
-                    print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
+                    print(f"Name: {contact['name']}, "
+                          f"Phone: {contact['phone']}, "
+                          f"Email: {contact['email']} \n")
                     print('Удалить контакт?')
                     contact_manager.delete_contact(contact)
         else:
@@ -182,7 +192,9 @@ while True:
                     print('Найдены следующие контакты:\n')
                     num_in_list = 1
                     for contact in contact_list:
-                        print(f"{num_in_list}) Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} ")
+                        print(f"{num_in_list}) Name: {contact['name']}, "
+                              f"Phone: {contact['phone']}, "
+                              f"Email: {contact['email']} \n")
                         num_in_list += 1
                     while True:
                         try:
@@ -194,18 +206,26 @@ while True:
                         if 0 < num_change <= len(contact_list):
                             contact = contact_list[num_change-1]
                             print('Изменяемый контакт:')
-                            print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
+                            print(f"{num_in_list}) Name: {contact['name']}, "
+                                  f"Phone: {contact['phone']}, "
+                                  f"Email: {contact['email']} \n")
                             break
                         else:
                             print('Вам нужно выбрать номер из списка!')
                 else:
                     print('Найден единственный контакт:')
                     for contact in contact_list:
-                        print(f"Name: {contact['name']}, Phone: {contact['phone']}, Email: {contact['email']} \n")
+                        print(f"Name: {contact['name']}, "
+                              f"Phone: {contact['phone']}, "
+                              f"Email: {contact['email']} \n")
 
                 current_contact = Contact(contact['name'], contact['phone'], contact['email'])
                 while True:
-                    edit_choice = input('Введите команду, чтобы изменить контакт:\nИзменить имя - name\nИзменить телефон - phone\nИзменить почту - email\nИзменить контакт полностью - all\n').lower()
+    edit_choice = input('Введите команду, чтобы изменить контакт:\n'
+                        'Изменить имя - name\n'
+                        'Изменить телефон - phone\n'
+                        'Изменить почту - email\n'
+                        'Изменить контакт полностью - all\n').lower()
                     if edit_choice == 'name':
                         name = input('Введите имя контакта: ')
                         space()
